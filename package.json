@@ -1,38 +1,21 @@
 {
-  "name": "examples",
+  "name": "hyperbeam-chrome-extension-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "devDependencies": {
-    "prettier": "2.7.1"
-  },
+  "description": "Web application demo of Hyperbeam with custom Chrome extension",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write ."
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "cd load-custom-chrome-extension && node zip-extension.js",
+    "postinstall": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hyperbeam/examples.git"
-  },
-  "workspaces": [
-    "audio-context",
-    "audio-visualization",
-    "content-security-policy",
-    "embed-in-chrome-extension",
-    "load-custom-chrome-extension",
-    "multicursor",
-    "persistence",
-    "resize",
-    "timeout",
-    "troubleshooting",
-    "webhook-auth",
-    "zoom"
-  ],
-  "keywords": [],
+  "keywords": ["hyperbeam", "chrome-extension", "web-app", "demo"],
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hyperbeam/examples/issues"
-  },
-  "homepage": "https://github.com/hyperbeam/examples#readme"
+  "dependencies": {
+    "axios": "^1.6.0",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "archiver": "^5.3.1"
+  }
 }
